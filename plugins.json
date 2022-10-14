@@ -1,0 +1,509 @@
+[
+    {
+        "iconUrl": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/master/AllMovieLandProvider/icon.png",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 27420,
+        "status": 1,
+        "language": "hi",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries",
+            "Cartoon"
+        ],
+        "version": 12,
+        "internalName": "AllMovieLandProvider",
+        "description": "Indian MultiLanguage Provider (Mostly Hindi)",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/AllMovieLandProvider.cs3",
+        "name": "AllMovieLandProvider"
+    },
+    {
+        "iconUrl": "https://www.google.com/s2/favicons?domain=anime-world.in&sz=%size%",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 18424,
+        "status": 1,
+        "language": "hi",
+        "authors": [
+            "darkdemon, likdev256"
+        ],
+        "tvTypes": [
+            "TvSeries",
+            "Movie",
+            "Anime",
+            "Cartoon"
+        ],
+        "version": 1,
+        "internalName": "AnimeWorldProvider",
+        "description": "Please wait for 10seconds to bypass the ads",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/AnimeWorldProvider.cs3",
+        "name": "AnimeWorldProvider"
+    },
+    {
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 16586,
+        "status": 0,
+        "language": "ta",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "Movie"
+        ],
+        "version": 2,
+        "internalName": "Av1EncodedProvider",
+        "description": "Tamil Movies [nolinksfound] (Use webview to watch unable to scrape links)",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/Av1EncodedProvider.cs3",
+        "name": "Av1EncodedProvider"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/master/BanglaPlexProvider/icon.png",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 18902,
+        "status": 1,
+        "language": "bn",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "Movie"
+        ],
+        "version": 2,
+        "internalName": "BanglaPlexProvider",
+        "description": "Bengali Indian HD Provider",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/BanglaPlexProvider.cs3",
+        "name": "BanglaPlexProvider"
+    },
+    {
+        "iconUrl": "https://www.google.com/s2/favicons?domain=bolly2tolly.desi/&sz=%size%",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 20315,
+        "status": 1,
+        "language": "hi",
+        "authors": [
+            "darkdemon, likdev256"
+        ],
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 1,
+        "internalName": "Bolly2TollyProvider",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/Bolly2TollyProvider.cs3",
+        "name": "Bolly2TollyProvider"
+    },
+    {
+        "iconUrl": "https://www.google.com/s2/favicons?domain=ww1.cinevez.mx&sz=%size%",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 11288,
+        "status": 1,
+        "language": "hi",
+        "authors": [
+            "darkdemon, likdev256"
+        ],
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 1,
+        "internalName": "CinevezProvider",
+        "description": "This website support English/Hindi/Kannada/Malayalam/Tamil/Telugu",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/CinevezProvider.cs3",
+        "name": "CinevezProvider"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/master/EinthusanProvider/icon.png",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 15208,
+        "status": 1,
+        "language": "ta",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "Movie"
+        ],
+        "version": 5,
+        "internalName": "EinthusanProvider",
+        "description": "Indian Multi-language HD Provider",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/EinthusanProvider.cs3",
+        "name": "EinthusanProvider"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/master/FDMProvider/icon.png",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 17846,
+        "status": 1,
+        "language": "ta",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 2,
+        "internalName": "FDMProvider",
+        "description": "Indian Multi-language 4k Provider",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/FDMProvider.cs3",
+        "name": "FDMProvider"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/master/FlbdProvider/icon.png",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 21606,
+        "status": 1,
+        "language": "bn",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "FlbdProvider",
+        "description": "Bengali Indian HD Provider",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/FlbdProvider.cs3",
+        "name": "FlbdProvider"
+    },
+    {
+        "iconUrl": "https://www.google.com/s2/favicons?domain=ww2.ibomma.cx&sz=%size%",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 17733,
+        "status": 1,
+        "language": "te",
+        "authors": [
+            "darkdemon, likdev256"
+        ],
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 1,
+        "internalName": "IBommaProvider",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/IBommaProvider.cs3",
+        "name": "IBommaProvider"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/master/KatMoviesProvider/icon.png",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 17291,
+        "status": 0,
+        "language": "ta",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "KatMoviesProvider",
+        "description": "Indian Multi-language Movie-only Provider",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/KatMoviesProvider.cs3",
+        "name": "KatMoviesProvider"
+    },
+    {
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 11649,
+        "status": 1,
+        "language": "ta",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "Live"
+        ],
+        "version": 1,
+        "internalName": "MadStreamProvider",
+        "description": "Indian Multi-language LiveTV Provider",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/MadStreamProvider.cs3",
+        "name": "MadStreamProvider"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/master/MassTamilanProvider/icon.png",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 14095,
+        "status": 1,
+        "language": "ta",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "version": 2,
+        "internalName": "MassTamilanProvider",
+        "description": "Indian Multi-language Music Provider",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/MassTamilanProvider.cs3",
+        "name": "MassTamilanProvider"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/master/MovieHUBProvider/icon.png",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 19987,
+        "status": 3,
+        "language": "ta",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 10,
+        "internalName": "MovieHUBProvider",
+        "description": "Indian Multi-language HD Provider",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/MovieHUBProvider.cs3",
+        "name": "MovieHUBProvider"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/master/MultiMoviesProvider/icon.png",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 19117,
+        "status": 0,
+        "language": "ta",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "MultiMoviesProvider",
+        "description": "Indian Multi-language HD Provider",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/MultiMoviesProvider.cs3",
+        "name": "MultiMoviesProvider"
+    },
+    {
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 12502,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "version": 9,
+        "internalName": "NOXXProvider",
+        "description": "HD TV Shows (Not all links are working because of a unsolvable issue)",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/NOXXProvider.cs3",
+        "name": "NOXXProvider"
+    },
+    {
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 30834,
+        "status": 0,
+        "language": "ta",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 2,
+        "internalName": "OlaMoviesProvider",
+        "description": "4K Provider for all Indian Languages",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/OlaMoviesProvider.cs3",
+        "name": "OlaMoviesProvider"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/master/PrivateMoviezProvider/icon.png",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 23977,
+        "status": 0,
+        "language": "ta",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 2,
+        "internalName": "PrivateMoviezProvider",
+        "description": "Indian Multi-language 4k Provider",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/PrivateMoviezProvider.cs3",
+        "name": "PrivateMoviezProvider"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/master/ShowFlixProvider/icon.png",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 39365,
+        "status": 1,
+        "language": "ta",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 29,
+        "internalName": "ShowFlixProvider",
+        "description": "HD Provider for all Indian Languages",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/ShowFlixProvider.cs3",
+        "name": "ShowFlixProvider"
+    },
+    {
+        "iconUrl": "https://www.google.com/s2/favicons?domain=streamblasters.lol&sz=%size%",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 14672,
+        "status": 1,
+        "language": "hi",
+        "authors": [
+            "darkdemon, likdev256"
+        ],
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 1,
+        "internalName": "StreamBlastersProvider",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/StreamBlastersProvider.cs3",
+        "name": "StreamBlastersProvider"
+    },
+    {
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 21607,
+        "status": 3,
+        "language": "si",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 4,
+        "internalName": "SubsKingProvider",
+        "description": "Sinhala subbed HD Provider",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/SubsKingProvider.cs3",
+        "name": "SubsKingProvider"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/master/TamilDhoolProvider/icon.png",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 20830,
+        "status": 1,
+        "language": "ta",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "version": 8,
+        "internalName": "TamilDhoolProvider",
+        "description": "Tamil Tv Serial/Shows Provider",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/TamilDhoolProvider.cs3",
+        "name": "TamilDhoolProvider"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/master/TamilUltraProvider/icon.png",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 11059,
+        "status": 1,
+        "language": "ta",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "Live"
+        ],
+        "version": 2,
+        "internalName": "TamilUltraProvider",
+        "description": "Indian Live TV Provider",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/TamilUltraProvider.cs3",
+        "name": "TamilUltraProvider"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/master/TamilYogiProvider/logo.png",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 11608,
+        "status": 1,
+        "language": "ta",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 8,
+        "internalName": "TamilYogiProvider",
+        "description": "Tamil Only Provider with frequent updates",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/TamilYogiProvider.cs3",
+        "name": "TamilYogiProvider"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/master/TeluguFlixProvider/icon.png",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 17938,
+        "status": 0,
+        "language": "te",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 5,
+        "internalName": "TeluguFlixProvider",
+        "description": "Telugu HD Provider",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/TeluguFlixProvider.cs3",
+        "name": "TeluguFlixProvider"
+    },
+    {
+        "iconUrl": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/master/UHDmoviesProvider/icon.png",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/LikDev-256/likdev256-tamil-providers",
+        "fileSize": 21427,
+        "status": 1,
+        "language": "hi",
+        "authors": [
+            "LikDev-256"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 3,
+        "internalName": "UHDmoviesProvider",
+        "description": "Indian Multi-language 4K Provider",
+        "url": "https://raw.githubusercontent.com/LikDev-256/likdev256-tamil-providers/builds/UHDmoviesProvider.cs3",
+        "name": "UHDmoviesProvider"
+    }
+]
