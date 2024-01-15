@@ -4,9 +4,9 @@ version = 2
 cloudstream {
     // All of these properties are optional, you can safely remove them
 
-    description = "Bengali Indian HD Provider"
-    language = "bn"
-    authors = listOf("LikDev-256")
+    description = "multilang Indian anime Provider"
+    language = "IN"
+    authors = listOf("FRANKPR-TN")
 
     /**
     * Status int as the following:
