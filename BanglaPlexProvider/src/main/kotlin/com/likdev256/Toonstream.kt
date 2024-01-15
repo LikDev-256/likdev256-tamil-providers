@@ -15,11 +15,11 @@ import javax.crypto.spec.SecretKeySpec
 import okhttp3.FormBody
 import java.net.URI
 
-class BanglaPlexProvider : MainAPI() { // all providers must be an instance of MainAPI
-    override var mainUrl = "https://banglaplex.fun"
-    override var name = "BanglaPlex"
+class Toonstream : MainAPI() { // all providers must be an instance of MainAPI
+    override var mainUrl = "https://toonstream.in/"
+    override var name = "toonstream"
     override val hasMainPage = true
-    override var lang = "bn"
+    override var lang = "ta"
     override val hasDownloadSupport = true
     override val supportedTypes = setOf(
         TvType.Movie,
