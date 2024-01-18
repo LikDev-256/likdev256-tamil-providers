@@ -15,7 +15,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class FDMProvider : MainAPI() { // all providers must be an instance of MainAPI
-    override var mainUrl = "https://freedrivemovie.lol"
+    override var mainUrl = "https://freedrivemovie.com"
     override var name = "FreeDriveMovie"
     override val hasMainPage = true
     override var lang = "ta"

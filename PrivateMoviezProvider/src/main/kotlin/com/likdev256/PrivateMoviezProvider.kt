@@ -12,7 +12,7 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
 
 class PrivateMoviezProvider : MainAPI() { // all providers must be an instance of MainAPI
-    override var mainUrl = "https://privatemoviez.biz"
+    override var mainUrl = "https://privatemoviez.monster"
     override var name = "PrivateMoviez"
     override val hasMainPage = true
     override var lang = "hi"
@@ -21,8 +21,6 @@ class PrivateMoviezProvider : MainAPI() { // all providers must be an instance o
         TvType.Movie,
         TvType.TvSeries
     )
-
-    private val cfKiller = CloudflareKiller()
 
     override val mainPage = mainPageOf(
         "240" to "Hollywood Movies",
@@ -42,19 +40,15 @@ class PrivateMoviezProvider : MainAPI() { // all providers must be an instance o
     )
 
     private suspend fun queryMainPage(query: String, count: Int): String {
-
         return app.get(
             "$mainUrl/wp-admin/admin-ajax.php?action=livep&data[uuid]=uid_c$query&data[category]=$query&data[name]=grid_box_2&data[posts_per_page]=9&data[pagination]=load_more&data[entry_category]=text&data[title_tag]=h2&data[entry_meta][]=date&data[review]=1&data[mobile_hide_meta][]=comment&data[mobile_last]=date&data[bookmark]=1&data[entry_format]=bottom&data[hide_excerpt]=all&data[box_style]=shadow&data[center_mode]=1&data[paged]=1&data[page_max]=28&data[processing]=true&data[page_next]=$count",
-            interceptor = cfKiller,
             referer = "$mainUrl/"
         ).parsed<GetMainPageHtml>().content
     }
 
     private suspend fun querySearch(query: String): String {
-
         return app.get(
             "$mainUrl/wp-admin/admin-ajax.php?action=livep&data[uuid]=uid_search_0&data[name]=grid_box_2&data[posts_per_page]=9&data[pagination]=load_more&data[entry_category]=text&data[title_tag]=h2&data[entry_meta][]=date&data[review]=1&data[mobile_hide_meta][]=comment&data[mobile_last]=date&data[bookmark]=1&data[entry_format]=bottom&data[excerpt]=1&data[hide_excerpt]=all&data[box_style]=shadow&data[center_mode]=1&data[paged]=1&data[page_max]=282&data[processing]=true&data[page_next]=1",
-            interceptor = cfKiller,
             referer = "$mainUrl/"
         ).parsed<GetMainPageHtml>().content
     }
@@ -95,20 +89,18 @@ class PrivateMoviezProvider : MainAPI() { // all providers must be an instance o
         return if (href.contains("Movie")) {
             newMovieSearchResponse(title, href, TvType.Movie) {
                 this.posterUrl = posterUrl
-                posterHeaders = cfKiller.getCookieHeaders(mainUrl).toMap()
                 this.quality = quality
             }
         } else {
             newTvSeriesSearchResponse(title, href, TvType.TvSeries) {
                 this.posterUrl = posterUrl
-                posterHeaders = cfKiller.getCookieHeaders(mainUrl).toMap()
                 this.quality = quality
             }
         }
     }
 
     override suspend fun search(query: String): List<SearchResponse> {
-        val document = app.get("$mainUrl/?s=$query", interceptor = cfKiller).document
+        val document = app.get("$mainUrl/?s=$query").document
         Log.d("mybadsearch", document.toString())
 
         return document.select("div.p-wrap").mapNotNull {
@@ -117,7 +109,7 @@ class PrivateMoviezProvider : MainAPI() { // all providers must be an instance o
     }
 
     override suspend fun load(url: String): LoadResponse? {
-        val doc = app.get(url, interceptor = cfKiller).document
+        val doc = app.get(url).document
         //Log.d("Doc", doc.toString())
         val titleRaw = doc.selectFirst("h1.s-title")?.text()?.toString()?.trim()
             ?: return null
@@ -152,13 +144,11 @@ class PrivateMoviezProvider : MainAPI() { // all providers must be an instance o
             if (href.contains("Movie")) {
                 newMovieSearchResponse(titlerec, href, TvType.Movie) {
                     this.posterUrl = posterUrl
-                    posterHeaders = cfKiller.getCookieHeaders(mainUrl).toMap()
                     this.quality = quality
                 }
             } else {
                 newTvSeriesSearchResponse(titlerec, href, TvType.TvSeries) {
                     this.posterUrl = posterUrl
-                    posterHeaders = cfKiller.getCookieHeaders(mainUrl).toMap()
                     this.quality = quality
                 }
             }
@@ -189,7 +179,6 @@ class PrivateMoviezProvider : MainAPI() { // all providers must be an instance o
         //return if (type == TvType.Movie) {
         return newMovieLoadResponse(title, url, TvType.Movie, data) {
                     this.posterUrl = poster?.trim()
-                    posterHeaders = cfKiller.getCookieHeaders(mainUrl).toMap()
                     this.year = year
                     this.plot = if (description!!.contains("privatemoviez", true)) null else description
                     this.tags = tags
@@ -224,7 +213,7 @@ class PrivateMoviezProvider : MainAPI() { // all providers must be an instance o
         val link = parseJson<ArrayList<PrivateLinks>>(data)
         //iterate through each link
         link.forEach { me ->
-            val doc = app.get(me.sourceLink, interceptor = cfKiller).document
+            val doc = app.get(me.sourceLink).document
             //get the https://privatemoviez.best/secret?data=blahblah
             val gtlinkRegex = Regex("""console\.log\("(.*?)"\)""")
             //select from the above doc and do regex to get the gtlink

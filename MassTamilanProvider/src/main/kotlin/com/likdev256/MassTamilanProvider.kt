@@ -39,7 +39,7 @@ class MovieHUBProvider : MainAPI() { // all providers must be an instance of Mai
         }
 
         //Log.d("Document", request.data)
-        val home = document.select("div.botlist > div.a-i").mapNotNull {
+        val home = document.select("div.a-i").mapNotNull {
                 it.toSearchResult()
             }
 
@@ -62,47 +62,27 @@ class MovieHUBProvider : MainAPI() { // all providers must be an instance of Mai
     // Search is disabled bcz the provider doesn't support native search the current search is powered by google
     // which is garbaja and im too lazy to work on that PR if you can
 
-    /*override suspend fun search(query: String): List<SearchResponse> {
-        val document = app.get("$mainUrl/?s=$query").document
+    override suspend fun search(query: String): List<SearchResponse> {
+        val document = app.get("$mainUrl/search?keyword=$query").document
         //Log.d("document", document.toString())
 
-        return document.select("div.result-item").mapNotNull {
-            val title = it.selectFirst("article > div.details > div.title > a")?.text().toString().trim()
-            //Log.d("title", titleS)
-            val href = fixUrl(it.selectFirst("article > div.details > div.title > a")?.attr("href").toString())
-            //Log.d("href", href)
-            val posterUrl = fixUrlNull(it.selectFirst("article > div.image > div.thumbnail > a > img")?.attr("src"))
-            //Log.d("posterUrl", posterUrl.toString())
-            //Log.d("QualityN", qualityN)
-            val quality = getQualityFromString(it.select("div.poster > div.mepo > span").text().toString())
-            //Log.d("Quality", quality.toString())
-            val type = it.select("article > div.image > div.thumbnail > a > span").text().toString()
-            if (type.contains("Movie")) {
-                newMovieSearchResponse(title, href, TvType.Movie) {
-                    this.posterUrl = posterUrl
-                    this.quality = quality
-                }
-            } else {
-                newTvSeriesSearchResponse(title, href, TvType.TvSeries) {
-                    this.posterUrl = posterUrl
-                    this.quality = quality
-                }
-            }
+        return document.select("div.a-i").mapNotNull {
+            it.toSearchResult()
         }
-    }*/
+    }
 
     data class MassTamilanLinks (
         @JsonProperty("sourceName") val sourceName: String,
         @JsonProperty("sourceLink") val sourceLink: String
     )
 
-    override suspend fun load(url: String): LoadResponse? {
+    override suspend fun load(url: String): LoadResponse {
         val docLink = url.substringBefore(",,")
         val doc = app.get(docLink).document
         //Log.d("Doc", doc.toString())
         val title = url.substringAfter(",,")
         //Log.d("title", title)
-        val poster = fixUrlNull(mainUrl + doc.selectFirst("#movie-image > figure > picture > img")?.attr("src"))
+        val poster = fixUrlNull(mainUrl + doc.selectFirst("figure.ib > picture > img")?.attr("src"))
         //Log.d("poster", poster.toString())
         val description = doc.select("#movie-handle").text()
         var tags = listOf<String>()
@@ -160,6 +140,23 @@ class MovieHUBProvider : MainAPI() { // all providers must be an instance of Mai
                 )
             )
         }
+        val zipLinks = doc.select("h2.ziparea > a.dlink").map {
+            MassTamilanLinks(
+                it.text(),
+                mainUrl + it.attr("href")
+            )
+        }
+
+        episodes.add(
+            Episode(
+                data = zipLinks.toJson(),
+                name = "Full Zip",
+                season = 1,
+                episode = episodes.count()+1,
+                posterUrl = "https://miro.medium.com/v2/resize:fit:720/format:webp/1*nCwjG9N0CkYXOkznDB7kSw.png",
+                description = "Zip/Rar links"
+            )
+        )
 
         return newTvSeriesLoadResponse(title, docLink, TvType.TvSeries, episodes) {
                 this.posterUrl = poster
