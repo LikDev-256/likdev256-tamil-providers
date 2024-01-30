@@ -5,18 +5,11 @@ import com.fasterxml.jackson.annotation.JsonProperty
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.ExtractorLink
 import com.lagradost.cloudstream3.utils.*
-import com.lagradost.cloudstream3.LoadResponse.Companion.addTrailer
 import org.jsoup.nodes.Element
 import com.lagradost.nicehttp.NiceResponse
-import javax.crypto.Cipher
-import javax.crypto.SecretKeyFactory
-import javax.crypto.spec.IvParameterSpec
-import javax.crypto.spec.PBEKeySpec
-import javax.crypto.spec.SecretKeySpec
 import okhttp3.FormBody
-import java.net.URI
 
-class MovieHUBProvider : MainAPI() { // all providers must be an instance of MainAPI
+class TamilUltraProvider : MainAPI() { // all providers must be an instance of MainAPI
     override var mainUrl = "https://tamilultra.team"
     override var name = "tamilUltra"
     override val hasMainPage = true
@@ -62,7 +55,7 @@ class MovieHUBProvider : MainAPI() { // all providers must be an instance of Mai
         //Log.d("href", href)
         val posterUrl = fixUrlNull(this.selectFirst("div.poster > img")?.attr("src"))
         //Log.d("posterUrl", posterUrl.toString())
-        newMovieSearchResponse(title, href, TvType.Live) {
+        return newMovieSearchResponse(title, href, TvType.Live) {
                 this.posterUrl = posterUrl
             }
     }
@@ -86,7 +79,6 @@ class MovieHUBProvider : MainAPI() { // all providers must be an instance of Mai
 
             newMovieSearchResponse(title, href, TvType.Live) {
                     this.posterUrl = posterUrl
-                    this.quality = quality
                 }
         }
     }
@@ -111,19 +103,16 @@ class MovieHUBProvider : MainAPI() { // all providers must be an instance of Mai
         @JsonProperty("type") var type : String?
     )
 
-    override suspend fun load(url: String): LoadResponse? {
+    override suspend fun load(url: String): LoadResponse {
         val doc = app.get(url).document
         //Log.d("Doc", doc.toString())
-        val title = doc.selectFirst("div.sheader > div.data > h1")?.text()?.toString()?.trim()
+        val title = doc.select("div.sheader > div.data > h1").text()
         //Log.d("title", title)
         val poster = fixUrlNull(doc.selectFirst("div.poster > img")?.attr("src"))
-        val recommendations = doc.select("div.owl-item) > article > a").attr("href").mapNotNull {
-            it.toSearchResult()
-        }
         val id = doc.select("#player-option-1").attr("data-post")
 
 
-        return newMovieLoadResponse(title, id, TvType.Live, url+","+id) {
+        return newMovieLoadResponse(title, id, TvType.Live, "$url,$id") {
                 this.posterUrl = poster
             }
     }
@@ -135,14 +124,24 @@ class MovieHUBProvider : MainAPI() { // all providers must be an instance of Mai
         subtitleCallback: (SubtitleFile) -> Unit,
         callback: (ExtractorLink) -> Unit
     ): Boolean {
+        val referer = data.substringBefore(",")
         val link = fixUrlNull(
                 getEmbed(
-                    data.,
+                    data.substringAfter(","),
                     "1",
                     referer
                 ).parsed<EmbedUrl>().embedUrl
             ).toString()
-        val main = getBaseUrl(url)
+        callback.invoke(
+            ExtractorLink(
+                name,
+                name,
+                link.substringAfter(".php?"),
+                referer,
+                Qualities.Unknown.value,
+                true
+            )
+        )
 
         return true
     }
