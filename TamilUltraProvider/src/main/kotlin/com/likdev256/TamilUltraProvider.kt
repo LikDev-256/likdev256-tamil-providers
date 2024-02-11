@@ -11,7 +11,7 @@ import okhttp3.FormBody
 
 class TamilUltraProvider : MainAPI() { // all providers must be an instance of MainAPI
     override var mainUrl = "https://tamilultra.team"
-    override var name = "tamilUltra"
+    override var name = "TamilUltra"
     override val hasMainPage = true
     override var lang = "ta"
     override val hasDownloadSupport = true

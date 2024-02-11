@@ -18,7 +18,7 @@ import okhttp3.RequestBody.Companion.toRequestBody
 import kotlin.random.Random
 
 class ShowFlixProvider : MainAPI() { // all providers must be an instance of MainAPI
-    override var mainUrl = "https://showflix.space"
+    override var mainUrl = "https://showflix.lol"
     override var name = "ShowFlix"
     override val hasMainPage = true
     override var lang = "ta"
@@ -114,8 +114,8 @@ class ShowFlixProvider : MainAPI() { // all providers must be an instance of Mai
         @JsonProperty("count") var count: Int
     )*/
 
-    private val MovieapiUrl = "https://parse.showflix.tk/parse/classes/movies"
-    private val TVapiUrl    = "https://parse.showflix.tk/parse/classes/series"
+    private val MovieapiUrl = "https://parse.showflix.online/parse/classes/movies"
+    private val TVapiUrl    = "https://parse.showflix.online/parse/classes/series"
 
     private suspend fun queryMovieApi(skip: Int, query: String): NiceResponse {
         val req =
