@@ -11,7 +11,7 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
 
 class StreamBlastersProvider : MainAPI() { // all providers must be an instance of MainAPI
-    override var mainUrl = "https://streamblasters.art"
+    override var mainUrl = "https://www.streamblasters.org/"
     override var name = "StreamBlasters"
     override val hasMainPage = true
     override var lang = "hi"
