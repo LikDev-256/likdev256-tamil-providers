@@ -22,12 +22,13 @@ class StreamBlastersProvider : MainAPI() { // all providers must be an instance 
     )
 
     override val mainPage = mainPageOf(
-        "$mainUrl/genre/english/page/" to "English",
-        "$mainUrl/genre/hindi/page/" to "Hindi",
-        "$mainUrl/genre/kannada/page/" to "Kannada",
-        "$mainUrl/genre/malayalam/page/" to "Malayalam",
-        "$mainUrl/genre/tamil/page/" to "Tamil",
-        "$mainUrl/genre/telugu/page/" to "Telugu"
+        "$mainUrl/category/english/" to "English",
+        "$mainUrl/category/hindi/" to "Hindi",
+        "$mainUrl/category/kannada/" to "Kannada",
+        "$mainUrl/category/malayalam/" to "Malayalam",
+        "$mainUrl/category/tamil/" to "Tamil",
+        "$mainUrl/category/telugu/" to "Telugu"
+        "$mainUrl/category/web-series/ to "Webseries"
     )
 
     override suspend fun getMainPage(
