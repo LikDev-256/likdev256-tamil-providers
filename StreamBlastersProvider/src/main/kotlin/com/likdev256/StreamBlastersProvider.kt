@@ -1,4 +1,3 @@
-
 package com.likdev256
 
 import com.fasterxml.jackson.annotation.JsonProperty
@@ -11,7 +10,7 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
 
 class StreamBlastersProvider : MainAPI() { // all providers must be an instance of MainAPI
-    override var mainUrl = "https://streamblasters.art"
+    override var mainUrl = "https://www.streamblasters.fans/"
     override var name = "StreamBlasters"
     override val hasMainPage = true
     override var lang = "hi"
@@ -22,12 +21,13 @@ class StreamBlastersProvider : MainAPI() { // all providers must be an instance 
     )
 
     override val mainPage = mainPageOf(
-        "$mainUrl/genre/english/page/" to "English",
-        "$mainUrl/genre/hindi/page/" to "Hindi",
-        "$mainUrl/genre/kannada/page/" to "Kannada",
-        "$mainUrl/genre/malayalam/page/" to "Malayalam",
-        "$mainUrl/genre/tamil/page/" to "Tamil",
-        "$mainUrl/genre/telugu/page/" to "Telugu"
+        "$mainUrl/category/english/" to "English",
+        "$mainUrl/category/hindi/" to "Hindi",
+        "$mainUrl/category/kannada/" to "Kannada",
+        "$mainUrl/category/malayalam/" to "Malayalam",
+        "$mainUrl/category/tamil/" to "Tamil",
+        "$mainUrl/category/telugu/" to "Telugu"
+        "$mainUrl/category/web-series/ to "Webseries"
     )
 
     override suspend fun getMainPage(
@@ -90,7 +90,7 @@ class StreamBlastersProvider : MainAPI() { // all providers must be an instance 
 
         return if (tvType == TvType.TvSeries) {
             val episodes = document.select("ul.episodios li").mapNotNull {
-                val href = fixUrl(it.select("a").attr("href")?: return null)
+                val href = fixUrl(it.select("a").attr("href") ?: return@mapNotNull null)
                 val name = it.select("a").text().trim()
                 val thumbs = it.select("img").attr("src")
                 val season = it.select(".numerando").text().split(" - ").first().toInt()
@@ -150,16 +150,3 @@ class StreamBlastersProvider : MainAPI() { // all providers must be an instance 
                         "type" to "movie"
                     ),
                     referer = data,
-                    headers = mapOf("X-Requested-With" to "XMLHttpRequest")
-                ).parsed<ResponseHash>().embed_url
-                val source = if(response.contains("iframe")) Jsoup.parse(response).select("iframe").attr("src") else response
-                loadExtractor(source, data, subtitleCallback, callback)
-            }
-        }
-        return true
-    }
-    data class ResponseHash(
-        @JsonProperty("embed_url") val embed_url: String,
-        @JsonProperty("type") val type: String?,
-    )
-}
