@@ -1,4 +1,3 @@
-
 package com.likdev256
 
 import com.fasterxml.jackson.annotation.JsonProperty
@@ -11,7 +10,7 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
 
 class StreamBlastersProvider : MainAPI() { // all providers must be an instance of MainAPI
-    override var mainUrl = "https://www.streamblasters.org/"
+    override var mainUrl = "https://www.streamblasters.fans/"
     override var name = "StreamBlasters"
     override val hasMainPage = true
     override var lang = "hi"
@@ -91,7 +90,7 @@ class StreamBlastersProvider : MainAPI() { // all providers must be an instance 
 
         return if (tvType == TvType.TvSeries) {
             val episodes = document.select("ul.episodios li").mapNotNull {
-                val href = fixUrl(it.select("a").attr("href")?: return null)
+                val href = fixUrl(it.select("a").attr("href") ?: return@mapNotNull null)
                 val name = it.select("a").text().trim()
                 val thumbs = it.select("img").attr("src")
                 val season = it.select(".numerando").text().split(" - ").first().toInt()
@@ -151,16 +150,3 @@ class StreamBlastersProvider : MainAPI() { // all providers must be an instance 
                         "type" to "movie"
                     ),
                     referer = data,
-                    headers = mapOf("X-Requested-With" to "XMLHttpRequest")
-                ).parsed<ResponseHash>().embed_url
-                val source = if(response.contains("iframe")) Jsoup.parse(response).select("iframe").attr("src") else response
-                loadExtractor(source, data, subtitleCallback, callback)
-            }
-        }
-        return true
-    }
-    data class ResponseHash(
-        @JsonProperty("embed_url") val embed_url: String,
-        @JsonProperty("type") val type: String?,
-    )
-}
